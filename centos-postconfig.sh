@@ -1,5 +1,4 @@
 #!/bin/bash
-currentuser = 'whoami'
 sudo yum -y update
 sudo yum -y install epel-release
 sudo yum -y install util-linux-user zsh dnf-automatic git p7zip python3 python3-pip
