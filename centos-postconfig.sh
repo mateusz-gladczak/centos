@@ -1,7 +1,10 @@
 #!/bin/bash
 currentuser = 'whoami'
 sudo yum -y update
-sudo yum -y install util-linux-user zsh dnf-automatic git epel-release p7zip
+sudo yum -y install epel-release
+sudo yum -y install util-linux-user zsh dnf-automatic git p7zip python3 python3-pip
+sudo ln -fs /usr/bin/python3 /usr/bin/python
+sudo ln -fs /usr/bin/pip3 /usr/bin/pip
 sudo sed -i 's/apply_updates = no/apply_updates = yes/g' /etc/dnf/automatic.conf
 sudo systemctl enable --now dnf-automatic.timer
 sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
