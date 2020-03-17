@@ -2,12 +2,12 @@
 #Configure repos
 sudo sed -i 's/enabled=0/enabled=1/g' /etc/yum.repos.d/CentOS-PowerTools.repo
 sudo echo baseurl =  http://mirror.centos.org/centos-8/8/AppStream/x86_64/os/repodata/repomd.xml >> /etc/yum.repos.d/CentOS-AppStream.repo
+sudo yum -y install epel-release
 sudo yum clean all
 sudo dnf makecache
 
 #perform basic installations
 sudo yum -y update
-sudo yum -y install epel-release
 sudo yum -y install util-linux-user zsh dnf-automatic git p7zip python3 python3-pip lynx
 
 #configure python
