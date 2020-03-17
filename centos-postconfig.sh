@@ -33,13 +33,13 @@ sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
 echo bindkey  "^[[H"   beginning-of-line >> ~/.zshrc
 echo bindkey  "^[[F"   end-of-line >> ~/.zshrc
 
+#configure datetime
+sudo mv /etc/localtime /etc/localtime.backup
+sudo ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
+
 echo 
 echo Configuration completed... logging off
 sleep 5
 logoff
 
-#!/bin/bash
-CURUSER=${LOGNAME}
-sudo bash -c 'echo "${CURUSER}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers'
-
-echo "$user" | xargs -I uname sudo dsadasds das d s uname dasdasds
+echo $LOGNAME | xargs -I user sudo bash -c 'echo "user  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers'
