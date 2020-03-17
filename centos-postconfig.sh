@@ -23,3 +23,5 @@ logoff
 #!/bin/bash
 CURUSER=${LOGNAME}
 sudo bash -c 'echo "${CURUSER}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers'
+
+echo "$user" | xargs -I uname sudo dsadasds das d s uname dasdasds
