@@ -8,7 +8,7 @@ echo ######################################
 
 #Configure repos
 sudo sed -i 's/enabled=0/enabled=1/g' /etc/yum.repos.d/CentOS-PowerTools.repo
-sudo echo baseurl =  http://mirror.centos.org/centos-8/8/AppStream/x86_64/os/repodata/repomd.xml >> /etc/yum.repos.d/CentOS-AppStream.repo
+sudo bash -c 'echo baseurl =  http://mirror.centos.org/centos-8/8/AppStream/x86_64/os/repodata/repomd.xml >> /etc/yum.repos.d/CentOS-AppStream.repo'
 sudo yum -y install epel-release
 sudo yum clean all
 sudo dnf makecache
