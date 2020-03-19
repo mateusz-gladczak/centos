@@ -47,6 +47,9 @@ sudo ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 #configure sudoers
 echo $LOGNAME | xargs -I user sudo bash -c 'echo "user  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers'
 
+#enable cockpit
+sudo systemctl enable --now cockpit.socket
+
 echo 
 echo Configuration completed... rebooting
 sleep 5
