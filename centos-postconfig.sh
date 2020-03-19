@@ -15,7 +15,7 @@ sudo dnf makecache
 
 #perform basic installations
 sudo yum -y update
-sudo yum -y install util-linux-user zsh dnf-automatic git p7zip python3 python3-pip lynx htop nfs-utils chrony cockpit cockpit-storaged cockpit-pcp
+sudo yum -y install util-linux-user zsh dnf-automatic git p7zip python3 python3-pip lynx htop nfs-utils chrony cockpit cockpit-storaged cockpit-pcp realmd
 
 #configure python
 sudo ln -fs /usr/bin/python3 /usr/bin/python
