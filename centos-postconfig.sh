@@ -1,4 +1,8 @@
 #!/bin/bash
+echo ######################################
+echo #  CENTOS 8 Post installation config #
+echo ######################################
+
 #Configure repos
 sudo sed -i 's/enabled=0/enabled=1/g' /etc/yum.repos.d/CentOS-PowerTools.repo
 sudo echo baseurl =  http://mirror.centos.org/centos-8/8/AppStream/x86_64/os/repodata/repomd.xml >> /etc/yum.repos.d/CentOS-AppStream.repo
@@ -37,9 +41,12 @@ echo bindkey  "^[[F"   end-of-line >> ~/.zshrc
 sudo mv /etc/localtime /etc/localtime.backup
 sudo ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 
+#configure sudoers
+echo $LOGNAME | xargs -I user sudo bash -c 'echo "user  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers'
+
 echo 
 echo Configuration completed... logging off
 sleep 5
 logoff
 
-echo $LOGNAME | xargs -I user sudo bash -c 'echo "user  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers'
+
