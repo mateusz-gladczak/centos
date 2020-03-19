@@ -48,8 +48,8 @@ sudo ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 echo $LOGNAME | xargs -I user sudo bash -c 'echo "user  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers'
 
 echo 
-echo Configuration completed... logging off
+echo Configuration completed... rebooting
 sleep 5
-exit
+sudo reboot
 
 
