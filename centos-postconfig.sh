@@ -15,7 +15,7 @@ sudo dnf makecache
 
 #perform basic installations
 sudo yum -y update
-sudo yum -y install util-linux-user zsh dnf-automatic git p7zip python3 python3-pip lynx htop nfs-utils
+sudo yum -y install util-linux-user zsh dnf-automatic git p7zip python3 python3-pip lynx htop nfs-utils chrony
 sudo dnf -y install cockpit-storaged
 
 #configure python
@@ -44,6 +44,17 @@ echo bindkey  "^[[F"   end-of-line >> ~/.zshrc
 #configure datetime
 sudo mv /etc/localtime /etc/localtime.backup
 sudo ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
+sudo mv /etc/chrony.conf /etc/chrony.conf.bak
+
+sudo bash -c 'cat >> /etc/chrony.conf <<EOL
+pool pool.ntp.org iburst
+driftfile /var/lib/chrony/drift
+makestep 1 3
+rtcsync
+EOL'
+
+sudo systemctl enable chronyd
+sudo systemctl start chronyd
 
 #disable selinux
 sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
