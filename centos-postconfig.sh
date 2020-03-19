@@ -1,6 +1,6 @@
 #!/bin/bash
 #run with:
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/mateusz-gladczak/centos/master/centos-postconfig.sh)"
+#sh -c "$(wget -O- https://raw.githubusercontent.com/mateusz-gladczak/centos/master/centos-postconfig.sh)"
 
 echo ######################################
 echo #  CENTOS 8 Post installation config #
