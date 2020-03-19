@@ -45,6 +45,9 @@ echo bindkey  "^[[F"   end-of-line >> ~/.zshrc
 sudo mv /etc/localtime /etc/localtime.backup
 sudo ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 
+#disable selinux
+sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+
 #configure sudoers
 echo $LOGNAME | xargs -I user sudo bash -c 'echo "user  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers'
 
