@@ -50,6 +50,6 @@ echo $LOGNAME | xargs -I user sudo bash -c 'echo "user  ALL=(ALL) NOPASSWD:ALL" 
 echo 
 echo Configuration completed... logging off
 sleep 5
-logoff
+exit
 
 
