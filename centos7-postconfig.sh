@@ -12,11 +12,6 @@ sudo yum install -y util-linux-user dnf-automatic git p7zip python3 python3-pip 
 #perform basic installations
 sudo yum -y update
 
-#configure python
-sudo ln -fs /usr/bin/python3 /usr/bin/python
-sudo ln -fs /usr/bin/pip3 /usr/bin/pip
-
-
 #configure autoupdates
 sudo sed -i 's/apply_updates = no/apply_updates = yes/g' /etc/dnf/automatic.conf
 sudo systemctl enable --now dnf-automatic.timer
