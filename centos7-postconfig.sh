@@ -1,3 +1,7 @@
+#!/bin/bash
+#run with:
+#sh -c "$(wget -O- https://raw.githubusercontent.com/mateusz-gladczak/centos/master/centos7-postconfig.sh)"
+
 sudo yum -y install epel-release
 sudo yum clean all
 sudo dnf makecache
