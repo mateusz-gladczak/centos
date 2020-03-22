@@ -6,7 +6,7 @@ sudo yum -y install epel-release
 sudo yum clean all
 sudo dnf makecache
 
-sudo yum install -y util-linux-user dnf-automatic git p7zip python3 python3-pip lynx htop nfs-utils cockpit cockpit-storaged cockpit-pcp realmd
+sudo yum install -y util-linux-user dnf-automatic git p7zip python3 python3-pip lynx htop nfs-utils cockpit cockpit-storaged cockpit-pcp realmd wget vim
 
 
 #perform basic installations
