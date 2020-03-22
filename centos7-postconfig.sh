@@ -34,3 +34,8 @@ echo $LOGNAME | xargs -I user sudo bash -c 'echo "user  ALL=(ALL) NOPASSWD:ALL" 
 
 ​sudo firewall-cmd --add-service=cockpit --permanent
 ​sudo firewall-cmd --reload
+
+echo 
+echo Configuration completed... rebooting
+sleep 5
+sudo reboot
